@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Notepad</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="shortcut icon" href="#" type="image/x-icon">
+      <!-- Load an icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="showNotes()">
+      <div class="displayShow">
+            <!-- The sidebar -->
+            <div class="sidebar column">
+                  <a href="#home" id="home" onclick="showNotes()"><i class="fa fa-fw fa-home"></i> Home</a>
+                  <a href="#new" id="new" onclick="openNewNotePage()"><i class="fa fa-fw fa-plus-square-o"></i> New</a>
+                  <a href="#trash" id="trash" onclick="showTrash()"><i class="fa fa-fw fa-envelope"></i> Trash</a>
+
+            </div>
+
+            <!-- //input note -->
+            <div id="renderMain" class="main">
+            </div>
+
+      </div>
+
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
