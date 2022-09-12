@@ -6,6 +6,10 @@ body {
       padding: 0%;
 }
 
+.showSidebarBgWhite {
+      background-color: white;
+}
+
 .displayShow {
       display: flex;
       height: 100%;
@@ -43,25 +47,9 @@ body {
 .main {
       margin: 50px 50px 50px 200px;
       display: flex;
-
-
+      justify-content: space-evenly;
       flex-wrap: wrap;
       height: min-content;
-}
-
-/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
-@media screen and (max-height: 450px) {
-      .sidebar {
-            padding-top: 15px;
-      }
-
-      .sidebar a {
-            font-size: 18px;
-      }
-}
-
-.showSidebarBgWhite {
-      background-color: white;
 }
 
 .container {
@@ -69,9 +57,8 @@ body {
       background-color: #f1f1f1;
       border-radius: 5px;
       padding: 10px;
-      margin: 10px 0;
       width: 340px;
-      margin: 25px;
+      margin: 25px 25px 25px 25px;
       overflow-wrap: break-word;
 }
 
@@ -87,6 +74,7 @@ body {
       margin-top: 20px;
       margin-bottom: 20px;
       overflow-wrap: break-word;
+      margin-left: -120px;
 }
 
 .noteText {
@@ -104,6 +92,8 @@ body {
       overflow-wrap: break-word;
 }
 
+
+
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
       .sidebar {
@@ -112,23 +102,55 @@ body {
             position: relative;
       }
 
-      .sidebar a {
-            float: left;
+      .container {
+            margin: 50px 25px 25px 25px;
+
       }
 
-      div.content {
-            margin-left: 0;
+      .containerNewNote {
+            margin-left: 0px;
       }
 
       .main {
             margin: 50px 50px 50px 50px;
       }
+
+      /* Style the topbar - fixed on top */
+      .sidebar {
+            position: fixed;
+            width: 100vw;
+            height: 50px;
+            z-index: 1;
+            background-color: rgb(48, 44, 44);
+            display: flex;
+            justify-content: space-around;
+      }
+
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
+
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-width: 480px) {
+      .container {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin: 50px 0px 25px 0px;
+      }
+
+      .main {
+            margin: 50px 0px 50px 0px;
+      }
+
       .sidebar a {
-            text-align: center;
-            float: none;
+            font-size: 16px;
+      }
+
+}
+
+@media screen and (max-width: 350px) {
+      .noteText {
+            width: 250px;
       }
 }
